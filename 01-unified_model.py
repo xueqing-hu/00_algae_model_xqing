@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 try:
-    from .algae_model import (
+    from .model_init import (
         r0, P_ref, R_ref, A_max, Y_0,
         calculate_K_temperature, calculate_A_temperature, calculate_t1,
         load_climate_data, TEST_DATA_PATH,
@@ -17,7 +17,7 @@ try:
 except ImportError:
     import sys
     sys.path.insert(0, str(Path(__file__).parent.parent))
-    from algae_model import (
+    from model_init import (
         r0, P_ref, R_ref, A_max, Y_0,
         calculate_K_temperature, calculate_A_temperature, calculate_t1,
         load_climate_data, TEST_DATA_PATH,
@@ -29,7 +29,7 @@ except ImportError:
 # RUN_MODE   : "all"    → run all three models (exponential, logistic, Avrami)
 #              "single" → run the model specified by MODEL_TYPE
 # MODEL_TYPE : "exponential" | "logistic" | "avrami"  (only for RUN_MODE="single")
-RUN_MODE   = "single"
+RUN_MODE   = "all"
 MODEL_TYPE = "avrami"
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -343,7 +343,7 @@ def _main() -> None:
     out_dir = Path(args.output_dir)
     save_results(results, out_dir / "growth_results.csv")
     plot_growth_curves(results, out_dir / "growth_curves.pdf")
-    plt.show()
+    plt.show()  
 
 
 if __name__ == "__main__":

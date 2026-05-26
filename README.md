@@ -1,7 +1,7 @@
 # Algae Growth Model
 
 A Python implementation of three biofilm/algae growth models driven by hourly outdoor climate data (temperature, RH, solar irradiance).  
-The primary model for use by collaborators is **`03-unified_model.py`**.
+The primary model for use by collaborators is **`01-unified_model.py`**.
 
 ---
 
@@ -9,11 +9,11 @@ The primary model for use by collaborators is **`03-unified_model.py`**.
 
 | File | Description |
 |------|-------------|
-| `03-unified_model.py` | **Main model** — run single or all growth models |
-| `01-_init__.py` | Material constants and Avrami calibration parameters |
-| `02-environmental_response_functions.py` | Environmental response functions *g*(*T*), *g*(RH), *g*(*S*) |
-| `04-Original_Avrami_Quagliarini.py` | Original Avrami model (Quagliarini et al., 2021) — reference |
-| `05-Original_Exponential_Miyauchi.py` | Original exponential model (Miyauchi et al.) — reference |
+| `01-unified_model.py` | **Main model** — run single or all growth models |
+| `algae_model.py` | Material constants and Avrami calibration parameters |
+| `response_functions.py` | Environmental response functions *g*(*T*), *g*(RH), *g*(*S*) |
+| `02-Original_Avrami_Quagliarini.py` | Original Avrami model (Quagliarini et al., 2021) — reference |
+| `03-Original_Exponential_Miyauchi.py` | Original exponential model (Miyauchi et al.) — reference |
 | `input/TestData_ZG.csv` | Test climate dataset (hourly, brick ZG) |
 
 ---
@@ -28,7 +28,7 @@ pip install numpy pandas matplotlib
 
 ### 2. Configure run mode
 
-Open `03-unified_model.py` and set the two variables near the top of the file:
+Open `01-unified_model.py` and set the two variables near the top of the file:
 
 ```python
 RUN_MODE   = "all"      # "all"  → run all three models
@@ -39,7 +39,7 @@ MODEL_TYPE = "logistic" # "exponential" | "logistic" | "avrami"
 ### 3. Run
 
 ```bash
-python 03-unified_model.py
+python 01-unified_model.py
 ```
 
 Results are written to `output/`:
@@ -128,7 +128,7 @@ All custom functions must accept a NumPy array and return a NumPy array of the s
 
 ## Models
 
-### Unified model (`03-unified_model.py`)
+### Unified model (`01-unified_model.py`)
 
 Three growth models share a common environmental driving function *G*(*t*) = *g*(*T*)·*g*(RH)·*g*(*S*):
 
@@ -142,7 +142,7 @@ Three growth models share a common environmental driving function *G*(*t*) = *g*
 
 ### Reference models
 
-- `04-Original_Avrami_Quagliarini.py`
-- `05-Original_Exponential_Miyauchi.py`
+- `02-Original_Avrami_Quagliarini.py`
+- `03-Original_Exponential_Miyauchi.py`
 
 These scripts are provided for comparison and transparency.

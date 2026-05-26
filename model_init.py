@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-TEST_DATA_PATH: Path = Path(__file__).parent.parent / "input" / "TestData_ZG.csv"
+TEST_DATA_PATH: Path = Path()/ "input" / "TestData_ZG.csv"
 
 # Miyauchi ODE parameters
 r0: float    = 9.26e-6
