@@ -225,7 +225,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     .main-header {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         color: #2E7D32;
         text-align: center;
         margin-bottom: 1rem;
@@ -329,12 +329,12 @@ def main():
         st.markdown("""
         ### Growth Models
         
-        **1. Exponential Model (Miyauchi)**
+        **1. Exponential Model (Miyauchi et al.)**
         - Simple exponential growth: dY/dt = r₀·G(t)·Y
         - No saturation limit
         - Suitable for early-stage growth
         
-        **2. Logistic Model (Miyauchi)**
+        **2. Logistic Model (Xueqing et al.)**
         - Logistic growth with saturation: dY/dt = r₀·G(t)·Y·(1-Y)
         - Self-limiting growth approaching Y = 1
         - Classical S-shaped growth curve
@@ -346,9 +346,9 @@ def main():
         - Based on Quagliarini et al. (2021) formulation
         
         ### Environmental Response Functions
-        - **Temperature (T)**: Optimal range 15-25°C
-        - **Relative Humidity (RH)**: Growth increases with RH > 70%
-        - **Solar Irradiance (S)**: Threshold-based activation
+        - **Temperature (T)**: Optimal range 20-24°C
+        - **Relative Humidity (RH)**: Growth increases with RH > 94%
+        - **Solar Irradiance (S)**: Growth is initially stimulated and then inhibited as light intensity increases
         """)
     
     # Run simulation
