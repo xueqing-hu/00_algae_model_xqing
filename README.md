@@ -1,7 +1,7 @@
 # Algae Growth Model
 
 A Python implementation of three biofilm/algae growth models driven by hourly outdoor climate data (temperature, RH, solar irradiance).  
-The primary model for use by collaborators is **`01-unified_model.py`**.
+The primary model for use by collaborators is **`model_init.py`**.
 
 ---
 
@@ -9,7 +9,7 @@ The primary model for use by collaborators is **`01-unified_model.py`**.
 
 | File | Description |
 |------|-------------|
-| `01-unified_model.py` | **Main model** — run single or all growth models |
+| `model_init.py` | **Main model** — run single or all growth models |
 | `algae_model.py` | Material constants and Avrami calibration parameters |
 | `response_functions.py` | Environmental response functions *g*(*T*), *g*(RH), *g*(*S*) |
 | `02-Original_Avrami_Quagliarini.py` | Original Avrami model (Quagliarini et al., 2021) — reference |
@@ -18,7 +18,36 @@ The primary model for use by collaborators is **`01-unified_model.py`**.
 
 ---
 
-## Quick Start
+## 🌐 Web Application Quick Start
+
+### Local Installation & Run
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Launch the app**:
+   ```bash
+   streamlit run app.py
+   ```
+
+3. **Open in browser**: Automatically opens at `http://localhost:8501`
+
+### Features
+- ✅ Select multiple growth models (Exponential, Logistic, Avrami)
+- ✅ Adjust material parameters with interactive sliders
+- ✅ Upload custom climate data CSV files
+- ✅ Real-time visualization of growth curves
+- ✅ Download results as CSV and PDF
+- ✅ Bilingual interface (English/Chinese)
+
+### Deploy Online
+See [STREAMLIT_DEPLOY.md](STREAMLIT_DEPLOY.md) for complete deployment instructions to Streamlit Cloud.
+
+---
+
+## 📊 Command Line Quick Start
 
 ### 1. Install dependencies
 
@@ -52,7 +81,7 @@ Results are written to `output/`:
 ## Input Data
 
 The default dataset is `input/TestData_ZG.csv`.  
-To use your own climate data, replace the path in `01-_init__.py`:
+To use your own climate data, replace the path in `model_init.py`:
 
 ```python
 TEST_DATA_PATH: Path = Path(__file__).parent.parent / "input" / "TestData_ZG.csv"
@@ -70,7 +99,7 @@ The CSV must contain the following columns (hourly resolution):
 
 ## Material Parameters
 
-Material-specific constants are defined in `01-_init__.py`.  
+Material-specific constants are defined in `model_init.py`.  
 The default values correspond to brick ZG (Quagliarini et al., 2021):
 
 ```python
@@ -87,7 +116,7 @@ T, RH, S, hours = load_climate_data("input/TestData_ZG.csv")
 results = run_all_models(T, RH, S, hours, P=0.30, R=6.0)
 ```
 
-The Avrami rate constant *K*(*T*, *P*, *R*) and saturation limit *A*(*T*, *P*, *R*) are evaluated from the polynomial coefficient matrices in `01-_init__.py` (Quagliarini et al., 2021). The ODE growth rate *r*₀ for the exponential/logistic models is also set there:
+The Avrami rate constant *K*(*T*, *P*, *R*) and saturation limit *A*(*T*, *P*, *R*) are evaluated from the polynomial coefficient matrices in `model_init.py` (Quagliarini et al., 2021). The ODE growth rate *r*₀ for the exponential/logistic models is also set there:
 
 ```python
 r0: float = 9.26e-6   # [1/s]
@@ -102,8 +131,8 @@ The default response functions in `02-environmental_response_functions.py` are a
 | Function | Formulation | Reference |
 |----------|------------|-----------|
 | *g*(*T*) | CTMI (Cardinal Temperature Model with Inflection) | Rosso et al. (1993) |
-| *g*(RH) | Linear ramp (94 %–98 %) | — |
-| *g*(*S*) | Monod with photoinhibition | — |
+| *g*(RH) | Linear ramp (94 %–98 %) | Nakajima et al, Xie et al, Quagliarini et al |
+| *g*(*S*) | Monod with photoinhibition | P-I curves |
 
 ### Replacing a response function
 
@@ -128,7 +157,7 @@ All custom functions must accept a NumPy array and return a NumPy array of the s
 
 ## Models
 
-### Unified model (`01-unified_model.py`)
+### Unified model (`model_init.py`)
 
 Three growth models share a common environmental driving function *G*(*t*) = *g*(*T*)·*g*(RH)·*g*(*S*):
 

@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 output/
+
+STREAMLIT_DEPLOY.md
+Usage_manual.md
