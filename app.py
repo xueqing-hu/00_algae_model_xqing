@@ -247,7 +247,7 @@ st.markdown("""
 def main():
     # Header
     st.markdown('<p class="main-header">🌿 Algae Growth Model Simulator</p>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-header">藻类生长模型模拟器</p>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">', unsafe_allow_html=True)
     
     # Sidebar - Model Configuration
     with st.sidebar:
@@ -258,7 +258,7 @@ def main():
         st.subheader("1. Select Models")
         model_options = {
             "Exponential (Miyauchi)": "exponential",
-            "Logistic (Miyauchi)": "logistic",
+            "Logistic (Xueqing)": "logistic",
             "Avrami (Quagliarini)": "avrami"
         }
         
@@ -353,7 +353,7 @@ def main():
     
     # Run simulation
     if run_button:
-        with st.spinner("Running simulation... 模拟运行中..."):
+        with st.spinner("Running simulation..."):
             try:
                 # Load data
                 if use_example_data or uploaded_file is None:
