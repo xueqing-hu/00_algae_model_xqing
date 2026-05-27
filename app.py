@@ -223,8 +223,9 @@ st.set_page_config(
 # Custom CSS
 st.markdown("""
     <style>
+    /* v2 */
     .main-header {
-        font-size: 5rem;
+        font-size: 5rem !important;
         color: #2E7D32;
         text-align: center;
         margin-bottom: 1rem;
