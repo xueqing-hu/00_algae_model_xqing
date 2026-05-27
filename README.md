@@ -17,37 +17,7 @@ The primary model for use by collaborators is **`model_init.py`**.
 | `input/TestData_ZG.csv` | Test climate dataset (hourly, brick ZG) |
 
 ---
-
-## 🌐 Web Application Quick Start
-
-### Local Installation & Run
-
-1. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Launch the app**:
-   ```bash
-   streamlit run app.py
-   ```
-
-3. **Open in browser**: Automatically opens at `http://localhost:8501`
-
-### Features
-- ✅ Select multiple growth models (Exponential, Logistic, Avrami)
-- ✅ Adjust material parameters with interactive sliders
-- ✅ Upload custom climate data CSV files
-- ✅ Real-time visualization of growth curves
-- ✅ Download results as CSV and PDF
-- ✅ Bilingual interface (English/Chinese)
-
-### Deploy Online
-See [STREAMLIT_DEPLOY.md](STREAMLIT_DEPLOY.md) for complete deployment instructions to Streamlit Cloud.
-
----
-
-## 📊 Command Line Quick Start
+## 📊 Quick Start
 
 ### 1. Install dependencies
 
