@@ -377,7 +377,7 @@ def main():
                 )
                 
                 # Display results
-                st.success("✅ Simulation completed!")
+                st.success("Simulation completed!")
                 
                 # Create tabs for results
                 tab1, tab2, tab3 = st.tabs(["📊 Visualization", "📈 Data Table", "📄 Summary"])
