@@ -1,0 +1,30 @@
+Research Non-Commercial License
+
+Copyright (c) 2026 Xueqing Hu
+
+Permission is granted, free of charge, to use, copy, modify, and distribute
+this software and associated documentation files for non-commercial research,
+educational, and academic purposes, subject to the following conditions:
+
+1. The above copyright notice and this license notice shall be included in all
+   copies or substantial portions of the software.
+
+2. Users shall cite the corresponding original publications for the implemented
+   algae growth models, as well as the associated publication or repository for
+   this software implementation where applicable.
+
+3. Commercial use, including selling, sublicensing, incorporating the software
+   into commercial products or services, or using it for paid consulting or
+   commercial decision-making, is not permitted without prior written permission
+   from the copyright holder.
+
+4. This license applies to the software implementation provided in this
+   repository. It does not claim ownership of the original scientific models,
+   ideas, or equations described in the cited literature.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
