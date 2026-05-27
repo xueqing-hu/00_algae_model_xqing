@@ -246,7 +246,7 @@ st.markdown("""
 
 def main():
     # Header
-    st.markdown('<p class="main-header">🌿 Algae Growth Model Simulator</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">🌿 Algae Growth Simulator</p>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">', unsafe_allow_html=True)
     
     # Sidebar - Model Configuration
