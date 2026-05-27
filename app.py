@@ -224,7 +224,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     .main-header {
-        font-size: 3.5rem;
+        font-size: 5rem;
         color: #2E7D32;
         text-align: center;
         margin-bottom: 1rem;
@@ -391,7 +391,7 @@ def main():
                     fig.savefig(buf, format='pdf', dpi=300, bbox_inches='tight')
                     buf.seek(0)
                     st.download_button(
-                        label="📥 Download Plot (PDF)",
+                        label="📥 Download Plot",
                         data=buf,
                         file_name="growth_curves.pdf",
                         mime="application/pdf"
