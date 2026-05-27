@@ -392,7 +392,7 @@ def main():
                     fig.savefig(buf, format='pdf', dpi=300, bbox_inches='tight')
                     buf.seek(0)
                     st.download_button(
-                        label="📥 Download Plot",
+                        label="Download Plot",
                         data=buf,
                         file_name="growth_curves.pdf",
                         mime="application/pdf"
