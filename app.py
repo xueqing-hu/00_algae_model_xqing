@@ -251,7 +251,7 @@ def main():
     
     # Sidebar - Model Configuration
     with st.sidebar:
-        st.header("⚙️ Model Configuration")
+        st.header("Model Configuration")
         st.markdown("---")
         
         # Model Selection
@@ -317,15 +317,15 @@ def main():
         st.markdown("---")
         
         # Run Button
-        run_button = st.button("🚀 Run Simulation", type="primary", use_container_width=True)
+        run_button = st.button("Run Simulation", type="primary", use_container_width=True)
     
     # Main Content Area
     if not selected_models:
-        st.warning("⚠️ Please select at least one model from the sidebar.")
+        st.warning("Please select at least one model from the sidebar.")
         return
     
     # Show model descriptions
-    with st.expander("📖 Model Descriptions"):
+    with st.expander("Model Descriptions"):
         st.markdown("""
         ### Growth Models
 
@@ -358,7 +358,7 @@ def main():
                 # Load data
                 if use_example_data or uploaded_file is None:
                     T_data, RH_data, S_data, hours = load_climate_data()
-                    st.info("ℹ️ Using example climate data from TestData_ZG.csv")
+                    st.info("Using example climate data from TestData_ZG.csv")
                 else:
                     # Save uploaded file temporarily
                     temp_file = Path("temp_upload.csv")
@@ -366,7 +366,7 @@ def main():
                         f.write(uploaded_file.getbuffer())
                     T_data, RH_data, S_data, hours = load_climate_data(temp_file)
                     temp_file.unlink()  # Delete temp file
-                    st.success(f"✅ Loaded data from {uploaded_file.name}")
+                    st.success(f"Loaded data from {uploaded_file.name}")
                 
                 # Run models
                 results = run_models(
@@ -377,7 +377,7 @@ def main():
                 )
                 
                 # Display results
-                st.success("✅ Simulation completed successfully!")
+                st.success("✅ Simulation completed!")
                 
                 # Create tabs for results
                 tab1, tab2, tab3 = st.tabs(["📊 Visualization", "📈 Data Table", "📄 Summary"])
@@ -420,7 +420,7 @@ def main():
                     # Download CSV
                     csv = df_results.to_csv(index=False).encode('utf-8')
                     st.download_button(
-                        label="📥 Download Results (CSV)",
+                        label="Download Results (CSV)",
                         data=csv,
                         file_name="growth_results.csv",
                         mime="text/csv"
