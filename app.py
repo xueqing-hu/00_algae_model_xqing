@@ -1,6 +1,5 @@
 """
 Algae Growth Model Web Application
-藻类生长模型网页应用
 
 This Streamlit app allows users to:
 - Select from three growth models (Exponential, Logistic, Avrami)
@@ -328,22 +327,23 @@ def main():
     with st.expander("📖 Model Descriptions"):
         st.markdown("""
         ### Growth Models
-        
-        **1. Exponential Model (Miyauchi et al.)**
-        - Simple exponential growth: dY/dt = r₀·G(t)·Y
-        - No saturation limit
-        - Suitable for early-stage growth
-        
-        **2. Logistic Model (Xueqing et al.)**
-        - Logistic growth with saturation: dY/dt = r₀·G(t)·Y·(1-Y)
-        - Self-limiting growth approaching Y = 1
-        - Classical S-shaped growth curve
-        
-        **3. Avrami Model (Quagliarini et al.)**
+
+        **1. Avrami Model (Quagliarini et al.)**
         - Active-time clock model: X(t*) = A(T,P,R)·[1 - exp(-K_eff·(t*-t1)⁴)]
         - Temperature and material-dependent
         - Accounts for porosity and surface roughness
-        - Based on Quagliarini et al. (2021) formulation
+        - Reference: Based on Quagliarini et al. (2021) formulation, href="https://doi.org/10.1016/j.jobe.2021.102965".
+       
+        **2. Exponential Model (Miyauchi et al.)**
+        - Simple exponential growth: dY/dt = r₀·G(t)·Y
+        - No saturation limit
+        - Reference: Based on Nakajima et al. (2021) formulation, href="https://doi: 10.1016/j.buildenv.2019.106575". 
+
+        
+        **3. Logistic Model (Xueqing et al.)**
+        - Logistic growth with saturation: dY/dt = r₀·G(t)·Y·(1-Y)
+        - Self-limiting growth approaching Y = 1
+        - Classical S-shaped growth curve
         
         ### Environmental Response Functions
         - **Temperature (T)**: Optimal range 20-24°C
@@ -465,7 +465,6 @@ def main():
     st.markdown("""
         <div style='text-align: center; color: #888; font-size: 0.9rem;'>
             Developed by Xueqing Hu | UGent PhD Project<br>
-            Based on Miyauchi et al. and Quagliarini et al. models
         </div>
     """, unsafe_allow_html=True)
 
