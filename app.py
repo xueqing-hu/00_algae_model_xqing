@@ -332,13 +332,12 @@ def main():
         - Active-time clock model: X(t*) = A(T,P,R)·[1 - exp(-K_eff·(t*-t1)⁴)]
         - Temperature and material-dependent
         - Accounts for porosity and surface roughness
-        - Reference: Based on Quagliarini et al. (2021) formulation, href="https://doi.org/10.1016/j.jobe.2021.102965".
+        - Reference: E. Quagliarini, B. Gregorini, and M. D'Orazio, ‘An Empirical Failure Model to Predict Biofouling Growth on Fired Bricks Due to Microalgae’, Journal of Building Engineering, vol. 44, p. 102965, Dec. 2021, "https://doi.org/10.1016/j.jobe.2021.102965".
        
         **2. Exponential Model (Miyauchi et al.)**
         - Simple exponential growth: dY/dt = r₀·G(t)·Y
         - No saturation limit
-        - Reference: Based on Nakajima et al. (2021) formulation, href="https://doi: 10.1016/j.buildenv.2019.106575". 
-
+        - Reference: M. Nakajima, S. Hokoi, D. Ogura, and C. Iba, ‘Field Survey of the Relationship between Environmental Conditions and Algal Growth on Exterior Walls’, Building and Environment, vol. 169, p. 106575, Feb. 2020, "https://doi.org/10.1016/j.buildenv.2019.106575".
         
         **3. Logistic Model (Xueqing et al.)**
         - Logistic growth with saturation: dY/dt = r₀·G(t)·Y·(1-Y)
