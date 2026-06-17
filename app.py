@@ -302,7 +302,7 @@ def main():
         st.markdown("---")
         
         # Data Upload
-        st.subheader("3. Climate Data")
+        st.subheader("3. Surface Conditions")
         use_example_data = st.checkbox("Use example data", value=True)
         
         if not use_example_data:
