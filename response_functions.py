@@ -11,8 +11,10 @@ RH_sat: float = 98.0
 
 # Solar irradiance – Monod with photoinhibition
 I_c: float         = 7.5
-K_I_W: float       = 45.59
-K_I_prime_W: float = 729.39
+PAR_to_global_ratio = 0.45
+K_I_W: float       = 45.59/PAR_to_global_ratio
+K_I_prime_W: float = 729.39/PAR_to_global_ratio
+
 I_opt_W: float     = float(np.sqrt(K_I_W * K_I_prime_W))
 
 # Blanchard temperature shape parameter
