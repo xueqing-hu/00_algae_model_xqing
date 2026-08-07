@@ -15,6 +15,10 @@ The primary model for use by collaborators is **`model_init.py`**.
 | `02-Original_Avrami_Quagliarini.py` | Original Avrami model (Quagliarini et al., 2021) — reference |
 | `03-Original_Exponential_Miyauchi.py` | Original exponential model (Miyauchi et al.) — reference |
 | `input/TestData_ZG.csv` | Test climate dataset (hourly, brick ZG) |
+| `main_10y_facade_sensitivity_hpc.py` | Generate DELPHIN project variants used for the sensitivity simulations |
+| `Delphin_template_10y.d6p` | Delphin template file |
+| `Delphin_Brick` | material files used for simulations |
+| `KMI_Brussels_1987-2017_4CY` | climate data used for simulatons |
 
 ---
 ## 📊 Quick Start
